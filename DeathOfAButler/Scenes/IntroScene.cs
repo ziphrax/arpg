@@ -32,7 +32,7 @@ namespace DeathOfAButler.Scenes
             yield return MoveBoxTo(540, 380);
             yield return MoveBoxTo(100, 380);
             yield return MoveBoxTo(100, 100);
-            Game.SwitchScene(new MainMenuScene());
+            Game.SwitchScene(new MainGameScene());
         }
 
         IEnumerator MoveBoxTo(float x, float y)
@@ -75,7 +75,7 @@ namespace DeathOfAButler.Scenes
             if (Input.KeyPressed(Key.Space))
             {
                 // When the space bar is pressed switch to the SecondScene.
-                Game.SwitchScene(new MainMenuScene());
+                Game.SwitchScene(new MainGameScene());
             }
         }
     }

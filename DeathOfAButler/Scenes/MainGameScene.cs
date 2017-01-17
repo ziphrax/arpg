@@ -1,4 +1,5 @@
 ﻿using Otter;
+using System.Collections.Generic;
 
 namespace DeathOfAButler.Scenes
 {
@@ -6,8 +7,11 @@ namespace DeathOfAButler.Scenes
     {
         public MainGameScene() : base()
         {
-            //example
-            AddGraphic(Image.CreateRectangle(Game.Instance.Width, Game.Instance.Height, Color.Yellow));
+
+            LevelData levelData = LevelLoader.Load(@"Assets/Levels/EntranceHallWay.json");
+
+            AddGraphics(levelData.Graphics.ToArray());
+            
         }
 
         public override void Update()

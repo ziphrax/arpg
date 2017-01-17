@@ -1,0 +1,36 @@
+﻿{
+  "Name": "Room5",
+  "Description": "Room 5",
+  "PlayerSpawnX": 3,
+  "PlayerSpawnY": 1,
+  "TileSizeX": 32,
+  "TileSizeY": 32,
+  "TileMap": [
+    [ 1, 1, 1, 2, 1, 1, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 1, 1, 1, 1, 1, 1 ]
+  ],
+  "CollisionMap": [
+    [ 1, 1, 1, 0, 1, 1, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 1, 1, 1, 1, 1, 1 ]
+  ],
+  "Tiles": [
+    "Floor.png",
+    "Wall.png",
+    "Door.png",
+    "Stairs.png"
+  ],
+  "DoorMap": [
+    {
+      "X": 3,
+      "Y": 1,
+      "Map": "EntranceHallWay"
+    }
+  ]
+
+}

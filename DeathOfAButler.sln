@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathOfAButler", "DeathOfAButler\DeathOfAButler.csproj", "{33F79838-4EB0-4A85-8F68-50117EA52620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otter", "..\Otter2D\Otter\Otter.csproj", "{236485C2-A7BA-4DCD-808A-B3A634764402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otter", "..\Otter\Otter.csproj", "{236485C2-A7BA-4DCD-808A-B3A634764402}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
