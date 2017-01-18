@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DeathOfAButler.Entitys
 {
+    public enum Tags { Floors, Walls, Doors, Player }
     public class CollisionEntity : Entity
     {
         public bool DoRender { get; set; }

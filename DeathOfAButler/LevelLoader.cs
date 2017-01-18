@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using DeathOfAButler.Entitys;
+using Newtonsoft.Json.Linq;
 using Otter;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,10 @@ namespace DeathOfAButler
             levelData.Graphics = ItterateOverTles<Graphic>(tileMap, GetTileImages);
 
             int[][] collisionMap = data?.CollisionMap?.ToObject<int[][]>();
-            levelData.Colliders = ItterateOverTles<Collider>(collisionMap, GetTileColliders);
+            levelData.Colliders = ItterateOverTles<Collider>(collisionMap, GetTileWalls);
+
+            int[][] doorsMap = data?.DoorsMap?.ToObject<int[][]>();
+            levelData.Doors = ItterateOverTles<Collider>(doorsMap, GetTileDoors);
 
             levelData.PlayerSpawnX = data?.PlayerSpawnX;
             levelData.PlayerSpawnY = data?.PlayerSpawnY;
@@ -62,11 +66,29 @@ namespace DeathOfAButler
 
         delegate T ItteratorFunction<T>(int value, int x, int y);
 
-        private static BoxCollider GetTileColliders(int value, int x, int y) {
+        private static BoxCollider GetTileDoors(int value, int x, int y)
+        {
+            BoxCollider currentTile = null;
+
+            if (value == 2)
+            {
+                currentTile = new BoxCollider(TileSizeX, TileSizeY,Tags.Doors);
+
+                currentTile.X = x * TileSizeX;
+                currentTile.Y = y * TileSizeY;
+
+                currentTile.X += originX;
+                currentTile.Y += originY;
+            }
+
+            return currentTile;
+        }
+
+        private static BoxCollider GetTileWalls(int value, int x, int y) {
             BoxCollider currentTile = null;
 
             if (value != 0) { 
-                currentTile = new BoxCollider(TileSizeX, TileSizeY, value);
+                currentTile = new BoxCollider(TileSizeX, TileSizeY, Tags.Walls);
 
                 currentTile.X = x * TileSizeX;
                 currentTile.Y = y * TileSizeY;

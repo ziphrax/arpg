@@ -17,6 +17,7 @@ namespace DeathOfAButler
 
         public List<Graphic> Graphics { get; set; }
         public List<Collider> Colliders { get; set; }
+        public List<Collider> Doors { get; set; }
         public int PlayerSpawnX { get; set; }
         public int PlayerSpawnY { get; set; }
 

@@ -6,7 +6,6 @@ namespace DeathOfAButler.Scenes
     {
         public GameOverScene() : base()
         {
-            //example
             AddGraphic(Image.CreateRectangle(Game.Instance.Width, Game.Instance.Height, Color.White));
         }
     }

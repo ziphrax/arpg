@@ -7,7 +7,7 @@ namespace DeathOfAButler.Scenes
     public class MainGameScene : Scene
     {
         public bool IsDebug { get; set; }
-        public MainGameScene() : base()
+        public MainGameScene(string level = "EntranceHallWay") : base()
         {
 
 #if DEBUG
@@ -16,12 +16,13 @@ namespace DeathOfAButler.Scenes
             IsDebug = false;
 #endif
 
-            LevelData levelData = LevelLoader.Load(@"Assets/Levels/EntranceHallWay.json");
+            LevelData levelData = LevelLoader.Load(@"Assets/Levels/" + level + ".json");
 
             AddGraphics(levelData.Graphics.ToArray());
             var CollisionsMap = new CollisionEntity(0, 0, IsDebug);            
             CollisionsMap.AddColliders(levelData.Colliders);
-            
+            CollisionsMap.AddColliders(levelData.Doors);
+
             Add(CollisionsMap);
 
             Add(
@@ -37,11 +38,7 @@ namespace DeathOfAButler.Scenes
         {
             base.Update();
 
-            if (Input.KeyPressed(Key.Space))
-            {
-                // When the space bar is pressed switch to the SecondScene.
-                Game.SwitchScene(new MainMenuScene());
-            }
+          
         }
     }
 }
