@@ -9,7 +9,16 @@ namespace DeathOfAButler
 {
     public class LevelData
     {
+        public int TileSizeX { get; set; }
+        public int TileSizeY { get;  set;}
+
+        public int OriginX { get; set; }
+        public int OriginY { get; set; }
+
         public List<Graphic> Graphics { get; set; }
+        public List<Collider> Colliders { get; set; }
+        public int PlayerSpawnX { get; set; }
+        public int PlayerSpawnY { get; set; }
 
         
     }

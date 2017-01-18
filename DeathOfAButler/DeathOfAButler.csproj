@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entitys\CollisionEntity.cs" />
     <Compile Include="Entitys\ImageEntity.cs" />
     <Compile Include="Entitys\PlayerEntity.cs" />
     <Compile Include="LevelData.cs" />

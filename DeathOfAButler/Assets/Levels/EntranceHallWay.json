@@ -1,8 +1,8 @@
 ﻿{
   "Name": "Entrance Hallway",
   "Description": "The Main Entrance hall",
-  "PlayerSpawnX": 2,
-  "PlayerSpawnY": 1,
+  "PlayerSpawnX": 1,
+  "PlayerSpawnY": 2,
   "TileSizeX": 32,
   "TileSizeY": 32,
   "TileMap": [
