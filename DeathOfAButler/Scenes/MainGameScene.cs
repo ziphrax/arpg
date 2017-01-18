@@ -15,7 +15,7 @@ namespace DeathOfAButler.Scenes
 #else
             IsDebug = false;
 #endif
-
+            Program.currentScene = level;
             LevelData levelData = LevelLoader.Load(@"Assets/Levels/" + level + ".json");
 
             AddGraphics(levelData.Graphics.ToArray());
@@ -31,6 +31,8 @@ namespace DeathOfAButler.Scenes
                     (levelData.PlayerSpawnY * levelData.TileSizeY) + levelData.OriginY
                 )
             );
+
+            Add(new Hud());
             
         }
 

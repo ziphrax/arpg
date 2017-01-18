@@ -51,6 +51,7 @@
     <Compile Include="Entitys\DoorCollider.cs" />
     <Compile Include="Entitys\ImageEntity.cs" />
     <Compile Include="Entitys\PlayerEntity.cs" />
+    <Compile Include="Hud.cs" />
     <Compile Include="LevelData.cs" />
     <Compile Include="LevelLoader.cs" />
     <Compile Include="Program.cs" />
