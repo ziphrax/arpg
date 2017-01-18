@@ -12,7 +12,7 @@ namespace DeathOfAButler.Entitys
         public String Room { get; set; }
         public DoorCollider(int x, int y,params int[] tags) : base(x,y,tags){}
 
-        public DoorCollider(int width, int height, Enum tag, params Enum[] tags) : base(width, height, tag, tags)
+        public DoorCollider(int width, int height, Enum tag) : base(width, height, tag)
         {
         }
     }

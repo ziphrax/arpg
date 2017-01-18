@@ -93,7 +93,7 @@ namespace DeathOfAButler
         private static BoxCollider GetTileWalls(string value, int x, int y) {
             BoxCollider currentTile = null;
             var valueInt = int.Parse( value);
-            if (valueInt != 0) { 
+            if (valueInt == 1) { 
                 currentTile = new BoxCollider(TileSizeX, TileSizeY, Tags.Walls);
 
                 currentTile.X = x * TileSizeX;

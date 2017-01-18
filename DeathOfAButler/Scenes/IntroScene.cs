@@ -75,6 +75,7 @@ namespace DeathOfAButler.Scenes
             if (Input.KeyPressed(Key.Space))
             {
                 // When the space bar is pressed switch to the SecondScene.
+                Program.currentScene = "MainGameScene";
                 Game.SwitchScene(new MainGameScene());
             }
         }

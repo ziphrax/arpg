@@ -31,13 +31,5 @@
     "Wall.png",
     "Door.png",
     "Stairs.png"
-  ],
-  "DoorMap": [
-    {
-      "X": 3,
-      "Y": 4,
-      "Map": "EntranceHallWay"
-    }
   ]
-
 }

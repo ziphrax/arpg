@@ -32,6 +32,7 @@ namespace DeathOfAButler.Scenes
 
         void SwitchScene() {
             // When the space bar is pressed switch to the SecondScene.
+            Program.currentScene = "IntroScene";
             Game.SwitchScene(new IntroScene());
         }
     }

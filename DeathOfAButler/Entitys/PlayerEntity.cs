@@ -63,9 +63,11 @@ namespace DeathOfAButler.Entitys
         public override void Update()
         {
                 base.Update();
+
             if (Entity.Collider.Overlap(Entity.X, Entity.Y, Tags.Doors)) {
-                //teleport
-                Game.Instance.SwitchScene(new MainGameScene("Room1"));
+                //teleport                
+                var collider = (DoorCollider) Entity.Collider.Collide(Entity.X, Entity.Y, Tags.Doors);
+                Game.Instance.SwitchScene(new MainGameScene(collider.Room));
             }
         }
     }
