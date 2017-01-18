@@ -19,18 +19,18 @@
     [ 1, 0, 0, 0, 0, 0, 1 ],
     [ 1, 1, 1, 0, 1, 1, 1 ]
   ],
+  "DoorsMap": [
+    [ 1, 1, 1, 1, 1, 1, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 0, 0, 1 ],
+    [ 1, 1, 1, "EntranceHallWay", 1, 1, 1 ]
+  ],
   "Tiles": [
     "Floor.png",
     "Wall.png",
     "Door.png",
     "Stairs.png"
-  ],
-   "DoorMap": [
-    {
-      "X": 3,
-      "Y": 4,
-      "Map": "EntranceHallWay"
-    }
   ]
 
 
