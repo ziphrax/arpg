@@ -13,6 +13,7 @@ namespace DeathOfAButler
     public static class LevelLoader
     {
         static string[] tiles;
+        static string[] items;
         static int TileSizeX;
         static int TileSizeY;
         static int originX;
@@ -24,9 +25,9 @@ namespace DeathOfAButler
 
             levelData.TileSizeX = TileSizeX = (int)data?.TileSizeX;
             levelData.TileSizeY = TileSizeY = (int)data?.TileSizeX;
-
-            TileSizeY = (int)data?.TileSizeY;
+            
             tiles = data?.Tiles?.ToObject<string[]>();
+            items = data?.Items?.ToObject<string[]>();
 
             //values to center map by
             levelData.OriginX = originX = Game.Instance.HalfWidth - ((data?.TileMap?[0]?.Count * TileSizeX) / 2);
@@ -40,6 +41,9 @@ namespace DeathOfAButler
 
             string[][] doorsMap = data?.DoorsMap?.ToObject<string[][]>();
             levelData.Doors = ItterateOverTles<Collider>(doorsMap, GetTileDoors);
+
+            string[][] itemsMap = data?.ItemsMap?.ToObject<string[][]>();
+            levelData.Items = ItterateOverTles<Graphic>(itemsMap, GetTileItems);
 
             levelData.PlayerSpawnX = data?.PlayerSpawnX;
             levelData.PlayerSpawnY = data?.PlayerSpawnY;
@@ -106,11 +110,12 @@ namespace DeathOfAButler
             return currentTile;
         }
 
-        private static Image GetTileImages(string value,int x, int y) {            
+        private static Image GetTileImages(string value, int x, int y)
+        {
             var valueInt = int.Parse(value);
             Image currentTile = null;
             if (int.TryParse(value, out valueInt))
-            {                
+            {
                 currentTile = new Image(Path.GetFullPath("Assets/Tiles/" + tiles[valueInt]));
                 currentTile.X = x * TileSizeX;
                 currentTile.Y = y * TileSizeY;
@@ -118,7 +123,30 @@ namespace DeathOfAButler
                 //Adjust for origin to center tiles
                 currentTile.X += originX;
                 currentTile.Y += originY;
-            }           
+            }
+
+            return currentTile;
+
+        }
+
+        private static Image GetTileItems(string value, int x, int y)
+        {
+            var valueInt = int.Parse(value);
+            Image currentTile = null;
+            if (int.TryParse(value, out valueInt))
+            {
+                string item = items[valueInt];
+                if (item.Length > 0) {
+                    currentTile = new Image(Path.GetFullPath("Assets/Tiles/" + item));
+                    currentTile.X = x * TileSizeX;
+                    currentTile.Y = y * TileSizeY;
+
+                    //Adjust for origin to center tiles
+                    currentTile.X += originX;
+                    currentTile.Y += originY;
+                }
+                
+            }
 
             return currentTile;
         }

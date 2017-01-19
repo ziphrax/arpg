@@ -6,7 +6,7 @@ namespace DeathOfAButler.Scenes
     {
         public CreditsScene() : base()
         {
-            //example
+            Program.currentScene = "Credits Scene";
             AddGraphic(Image.CreateRectangle(Game.Instance.Width, Game.Instance.Height, Color.Black));
         }
     }

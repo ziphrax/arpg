@@ -8,7 +8,7 @@ namespace DeathOfAButler.Scenes
         public Image ImageBox;
 
         public IntroScene() : base() {
-
+            Program.currentScene = "Intro Scene";
             ImageBox = Image.CreateRectangle(32,Color.Cyan);
             AddGraphic(ImageBox);
             ImageBox.X = 0;

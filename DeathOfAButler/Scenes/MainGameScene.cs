@@ -19,6 +19,8 @@ namespace DeathOfAButler.Scenes
             LevelData levelData = LevelLoader.Load(@"Assets/Levels/" + level + ".json");
 
             AddGraphics(levelData.Graphics.ToArray());
+            AddGraphics(levelData.Items.ToArray());
+
             var CollisionsMap = new CollisionEntity(0, 0, IsDebug);            
             CollisionsMap.AddColliders(levelData.Colliders);
             CollisionsMap.AddColliders(levelData.Doors);

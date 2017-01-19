@@ -10,6 +10,7 @@ namespace DeathOfAButler.Scenes
 
         public SplashScreenScene() : base() {
             //example
+            Program.currentScene = "Splash Screen Scene";
             image = new ImageEntity(0, 0, "Assets/SplashScreen.png");
             image.image.Alpha = 0;
             Add(image);
